@@ -1,0 +1,35 @@
+Os seguintes passos são recomendados para instalar um ambiente virtual adequado para as aulas de DIM0494:
+
+1) Instale o Miniconda (recomendado) ou Anaconda (caso prefira)
+
+https://docs.conda.io/en/latest/miniconda.html
+https://www.anaconda.com/products/distribution
+
+2) Crie um ambiente virtual:
+
+        $ conda create -n dim0494 python=3.9
+        $ conda activate dim0494
+
+3) Instale os seguintes pacotes:
+
+        * scikit-learn (machine learning toolkit)
+
+        $ conda install -c conda-forge scikit-learn
+
+        * pandas (para carregar datasets)
+
+        $ conda install pandas
+
+        * matplotlib e seaborn (para visualizar dados)
+
+        $ conda install -c conda-forge matplotlib
+        $ conda install -c anaconda seaborn
+        
+        * Jupyter (notebook):
+        
+        $ conda install -c anaconda jupyter
+        
+        * Keras e Tensorflow
+        
+        $ pip install --upgrade pip
+        $ pip install tensorflow
