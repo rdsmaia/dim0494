@@ -33,3 +33,11 @@ https://www.anaconda.com/products/distribution
         
         $ pip install --upgrade pip
         $ pip install tensorflow
+
+4) Caso possua uma GPU instalada na máquina, verifique se Keras a está utilizando.
+NOTA: tome cuidado para não usar toda a memória da placa de vídeo utilizada pelo computador,
+o ideal é utilizar GPU dedicadas ao treinamento de redes neurais profundas
+
+	$ python -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
+
+O comando acima deve retornar uma lista de GPUs disponíveis.
