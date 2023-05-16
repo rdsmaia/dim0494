@@ -31,8 +31,14 @@ https://www.anaconda.com/products/distribution
         
         * Keras e Tensorflow
         
-        $ pip install --upgrade pip
-        $ pip install tensorflow
+	$ conda install -c conda-forge cudatoolkit=11.8.0
+	$ pip install --upgrade pip
+	$ python -m pip install nvidia-cudnn-cu11==8.6.0.163 tensorflow==2.12.*
+	$ mkdir -p $CONDA_PREFIX/etc/conda/activate.d
+	$ echo 'CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+	$ CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))
+	$ echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CUDNN_PATH/lib' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+	$ source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
 
 4) Caso possua uma GPU instalada na máquina, verifique se Keras a está utilizando.
 NOTA: tome cuidado para não usar toda a memória da placa de vídeo utilizada pelo computador,
